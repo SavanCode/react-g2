@@ -5,40 +5,47 @@ class Hello extends Component {
     super(props);
     this.state = {
       data: [
-        { name: 'London', 月份: 'Jan.', 月均降雨量: 18.9 },
-        { name: 'London', 月份: 'Feb.', 月均降雨量: 28.8 },
-        { name: 'London', 月份: 'Mar.', 月均降雨量: 39.3 },
-        { name: 'London', 月份: 'Apr.', 月均降雨量: 81.4 },
-        { name: 'London', 月份: 'May', 月均降雨量: 47 },
-        { name: 'London', 月份: 'Jun.', 月均降雨量: 20.3 },
-        { name: 'London', 月份: 'Jul.', 月均降雨量: 24 },
-        { name: 'London', 月份: 'Aug.', 月均降雨量: 35.6 },
-        { name: 'Berlin', 月份: 'Jan.', 月均降雨量: 12.4 },
-        { name: 'Berlin', 月份: 'Feb.', 月均降雨量: 23.2 },
-        { name: 'Berlin', 月份: 'Mar.', 月均降雨量: 34.5 },
-        { name: 'Berlin', 月份: 'Apr.', 月均降雨量: 99.7 },
-        { name: 'Berlin', 月份: 'May', 月均降雨量: 52.6 },
-        { name: 'Berlin', 月份: 'Jun.', 月均降雨量: 35.5 },
-        { name: 'Berlin', 月份: 'Jul.', 月均降雨量: 37.4 },
-        { name: 'Berlin', 月份: 'Aug.', 月均降雨量: 42.4 },
-      ],
-      tDate: [
-        { type: '汽车', value: 34 },
-        { type: '建材家居', value: 85 },
-        { type: '住宿旅游', value: 103 },
-        { type: '交通运输与仓储邮政', value: 142 },
-        { type: '建筑房地产', value: 251 },
-        { type: '教育', value: 367 },
-        { type: 'IT 通讯电子', value: 491 },
-        { type: '社会公共管理', value: 672 },
-        { type: '医疗卫生', value: 868 },
-        { type: '金融保险', value: 1234 },
+        { name: '总上报人数', 月份: '8月', 月均降雨量: 189 },
+        { name: '总上报人数', 月份: '9月', 月均降雨量: 288 },
+        { name: '总上报人数', 月份: '10月', 月均降雨量: 393 },
+        { name: '总上报人数', 月份: '11月', 月均降雨量: 814 },
+        { name: '总上报人数', 月份: '12月', 月均降雨量: 147 },
+        { name: '总上报人数', 月份: '1月', 月均降雨量: 203 },
+        { name: '总上报人数', 月份: '2月', 月均降雨量: 240 },
+        { name: '总上报人数', 月份: '3月', 月均降雨量: 356 },
+        { name: '总上报人数', 月份: '8月', 月均降雨量: 124 },
+        { name: '未上报人数', 月份: '8月', 月均降雨量: 189 },
+        { name: '未上报人数', 月份: '9月', 月均降雨量: 288 },
+        { name: '未上报人数', 月份: '10月', 月均降雨量: 393 },
+        { name: '未上报人数', 月份: '11月', 月均降雨量: 814 },
+        { name: '未上报人数', 月份: '12月', 月均降雨量: 47 },
+        { name: '未上报人数', 月份: '1月', 月均降雨量: 203 },
+        { name: '未上报人数', 月份: '2月', 月均降雨量: 24 },
+        { name: '未上报人数', 月份: '3月', 月均降雨量: 356 },
+        { name: '未上报人数', 月份: '8月', 月均降雨量: 124 },
+        { name: '健康', 月份: '8月', 月均降雨量: 189 },
+        { name: '健康', 月份: '9月', 月均降雨量: 288 },
+        { name: '健康', 月份: '10月', 月均降雨量: 39 },
+        { name: '健康', 月份: '11月', 月均降雨量: 814 },
+        { name: '健康', 月份: '12月', 月均降雨量: 47 },
+        { name: '健康', 月份: '1月', 月均降雨量: 203 },
+        { name: '健康', 月份: '2月', 月均降雨量: 24 },
+        { name: '健康', 月份: '3月', 月均降雨量: 356 },
+        { name: '健康异常', 月份: '8月', 月均降雨量: 124 },
+        { name: '健康异常', 月份: '8月', 月均降雨量: 189 },
+        { name: '健康异常', 月份: '9月', 月均降雨量: 288 },
+        { name: '健康异常', 月份: '10月', 月均降雨量: 393 },
+        { name: '健康异常', 月份: '11月', 月均降雨量: 814 },
+        { name: '健康异常', 月份: '12月', 月均降雨量: 47 },
+        { name: '健康异常', 月份: '1月', 月均降雨量: 203 },
+        { name: '健康异常', 月份: '2月', 月均降雨量: 24 },
+        { name: '健康异常', 月份: '3月', 月均降雨量: 356 },
+        { name: '健康异常', 月份: '8月', 月均降雨量: 124 },
       ],
     };
   }
   componentDidMount() {
     this.readHistogram();
-    this.readt();
   }
   readHistogram() {
     const chart = new Chart({
@@ -46,7 +53,7 @@ class Hello extends Component {
       autoFit: true,
     });
     chart.data(this.state.data);
-    chart.scale('月均降雨量', {
+    chart.scale('员工上报情况', {
       nice: true,
     });
     chart.tooltip({
@@ -69,58 +76,8 @@ class Hello extends Component {
     chart.render();
   }
 
-  readt() {
-    const chart = new Chart({
-      container: 'container3',
-      autoFit: true,
-      height: 500,
-    });
-    chart.data(this.state.tDate);
-    chart.scale({
-      value: {
-        max: 1400,
-        min: 0,
-        alias: '销量（百万）',
-      },
-    });
-    chart.axis('type', {
-      title: null,
-      tickLine: null,
-      line: null,
-    });
-
-    chart.axis('value', {
-      label: null,
-      title: {
-        offset: 30,
-        style: {
-          fontSize: 12,
-          fontWeight: 300,
-        },
-      },
-    });
-    chart.legend(false);
-    chart.coordinate().transpose();
-    chart
-      .interval()
-      .position('type*value')
-      .size(26)
-      .label('value', {
-        style: {
-          fill: '#8d8d8d',
-        },
-        offset: 10,
-      });
-    chart.interaction('element-active');
-    chart.render();
-  }
   render() {
     const itemStyle = {
-      width: '49vw',
-      height: '50vh',
-      border: '1px solid #ccc',
-    };
-    const itemStyle3 = {
       width: '100vw',
       height: '50vh',
       border: '1px solid #ccc',
@@ -133,7 +90,6 @@ class Hello extends Component {
     return (
       <div style={divStyle}>
         <div style={itemStyle} id="container"></div>
-        <div style={itemStyle3} id="container3"></div>
       </div>
     );
   }

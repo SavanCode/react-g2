@@ -4,6 +4,10 @@ import Line from './components/Line';
 import './components/circles';
 import BarChart from './components/Bar';
 import AnotherBar from './components/Bar2';
+import Bar3 from './components/Bar3';
+import Pie from './components/Pie';
+import Circle from './components/Circle';
+import Circle2 from './components/Circle/circle2';
 
 const lineStyles = {
   fontFamily: 'sans-serif',
@@ -19,6 +23,10 @@ export default function App() {
         <Line />
       </div>
       <BarChart />
+      <Pie />
+      <Circle />
+      <Circle2 />
+      <Bar3 />
     </>
   );
 }
