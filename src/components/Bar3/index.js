@@ -121,7 +121,7 @@ class Hello extends Component {
       .interval()
       .adjust('stack')
       .position('time*value')
-      .color('type', ['#40a9ff', '#1890ff', '#096dd9', '#0050b3'])
+      .color('type', ['#40a9ff', '#1890ff'])
       .label('value', (val) => {
         if (val < 10) {
           return null;
