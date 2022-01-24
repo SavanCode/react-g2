@@ -91,7 +91,10 @@ class Hello extends Component {
         nice: true,
       },
     });
-
+    chart.tooltip({
+      shared: true,
+      showMarkers: false,
+    });
     chart.axis('time', {
       label: {
         textStyle: {
@@ -116,30 +119,26 @@ class Hello extends Component {
     // Step 3：创建图形语法，绘制柱状图，由 time 和 value 两个属性决定图形位置，genre 映射至 x 轴，sold 映射至 y 轴
     chart
       .interval()
+      .adjust('stack')
       .position('time*value')
-      // .size(26)
-      .color('type', ['#40a9ff', '#353D59'])
-      // .opacity(1)
-      .label('value', function (val) {
+      .color('type', ['#40a9ff', '#1890ff', '#096dd9', '#0050b3'])
+      .label('value', (val) => {
         if (val < 10) {
-          return false;
+          return null;
         }
         return {
           position: 'middle',
           offset: 0,
-          textStyle: {
-            fill: '#fff',
-            fontSize: 12,
-            shadowBlur: 2,
-            shadowColor: 'rgba(0, 0, 0, .45)',
+          content: (originData) => {
+            return originData.value + '%';
           },
-          formatter: function formatter(text) {
-            return text + '%';
+          style: {
+            fill: '#fff',
           },
         };
       });
 
-    //chart.interaction('element-active');
+    chart.interaction('active-region');
     chart.render();
   }
 
