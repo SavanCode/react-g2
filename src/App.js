@@ -8,6 +8,7 @@ import Bar3 from './components/Bar3';
 import Pie from './components/Pie';
 import Circle from './components/Circle';
 import Circle2 from './components/Circle/circle2';
+import Map from './components/Map';
 
 const lineStyles = {
   fontFamily: 'sans-serif',
@@ -27,6 +28,7 @@ export default function App() {
       <Circle />
       <Circle2 />
       <Bar3 />
+      <Map />
     </>
   );
 }
