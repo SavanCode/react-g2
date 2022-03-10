@@ -9,6 +9,7 @@ import Pie from './components/Pie';
 import Circle from './components/Circle';
 import Circle2 from './components/Circle/circle2';
 import Map from './components/Map';
+import Areachart from './components/Areachart';
 
 const lineStyles = {
   fontFamily: 'sans-serif',
@@ -29,6 +30,7 @@ export default function App() {
       <Circle2 />
       <Bar3 />
       <Map />
+      <Areachart />
     </>
   );
 }
