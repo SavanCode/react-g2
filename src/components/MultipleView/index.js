@@ -566,7 +566,7 @@ class Hello extends Component {
       padding: [10, 10, 40, 60],
     });
     view1.animate(false);
-    view1.data(data);
+    view1.data(this.state.data);
     view1.interaction('tooltip');
     view1.area().position('date*price');
 
@@ -583,7 +583,7 @@ class Hello extends Component {
       },
       padding: [0, 10, 20, 60],
     });
-    view2.data(data);
+    view2.data(this.state.data);
     view2.animate(false);
     view2.axis(false);
     view2.interval().position('date*price');
@@ -603,7 +603,7 @@ class Hello extends Component {
     });
 
     view3.interaction('other-filter');
-    view3.data(data);
+    view3.data(this.state.data);
     view3.tooltip(false);
     view3.axis(false);
     view3.area().position('date*price');

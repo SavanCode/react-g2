@@ -27,7 +27,7 @@ class Hello extends Component {
       height: 500,
     });
 
-    chart.data(data);
+    chart.data(this.state.data);
     chart.scale({
       value: {
         min: 10000,

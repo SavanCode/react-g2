@@ -8,8 +8,8 @@ import Bar3 from './components/Bar3';
 import Pie from './components/Pie';
 import Circle from './components/Circle';
 import Circle2 from './components/Circle/circle2';
-import Map from './components/Map';
-import Areachart from './components/Areachart';
+// import Map from './components/Map';
+import Areachart from './components/AreaChart';
 import Multipleviewchart from './components/MultipleView';
 
 const lineStyles = {
@@ -30,7 +30,7 @@ export default function App() {
       <Circle />
       <Circle2 />
       <Bar3 />
-      <Map />
+      {/* <Map /> */}
       <Areachart />
       <Multipleviewchart />
     </>
