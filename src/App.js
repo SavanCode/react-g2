@@ -12,6 +12,7 @@ import Circle2 from './components/Circle/circle2';
 import Areachart from './components/AreaChart';
 import Multipleviewchart from './components/MultipleView';
 import CircleBar from './components/CircleBar';
+import MultiAreaChart from './components/MultiAreaChart';
 
 const lineStyles = {
   fontFamily: 'sans-serif',
@@ -35,6 +36,7 @@ export default function App() {
       <Areachart />
       <Multipleviewchart />
       <CircleBar />
+      <MultiAreaChart />
     </>
   );
 }
