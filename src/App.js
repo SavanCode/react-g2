@@ -5,6 +5,7 @@ import './components/circles';
 import BarChart from './components/Bar';
 import AnotherBar from './components/Bar2';
 import Bar3 from './components/Bar3';
+import Bar4 from './components/Bar4';
 import Pie from './components/Pie';
 import Circle from './components/Circle';
 import Circle2 from './components/Circle/circle2';
@@ -32,6 +33,7 @@ export default function App() {
       <Circle />
       <Circle2 />
       <Bar3 />
+      <Bar4 />
       {/* <Map /> */}
       <Areachart />
       <Multipleviewchart />
