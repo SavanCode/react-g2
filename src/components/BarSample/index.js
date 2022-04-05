@@ -9,6 +9,8 @@ const BarSample = ({
   x,
   y,
   contentExtra,
+  xLabelColor,
+  barTextStyle,
 }) => {
   useEffect(() => {
     readHistogram(data);
@@ -30,25 +32,32 @@ const BarSample = ({
       tickLine: {
         alignTick: false,
       },
+      label: { style: { fill: xLabelColor } },
     });
     chart.axis(y, false);
 
     chart.tooltip({
       showMarkers: false,
     });
-    chart.interval().position(x + '*' + y);
-    chart.interaction('element-active');
+    chart
+      .interval()
+      .position(x + '*' + y)
+      .color(y, (val) => {
+        //color bar show up
+        if (val < 2000) {
+          return '#36c361';
+        }
+        return '#ff5957';
+      });
+    chart.interaction('element-active'); // 添加文本标注
 
-    // 添加文本标注
     data.forEach((item) => {
       chart
         .annotation()
         .text({
           position: [item[x], item[y]],
           content: item[y],
-          style: {
-            textAlign: 'center',
-          },
+          style: barTextStyle,
           offsetY: -30,
         })
         .text({
@@ -56,9 +65,7 @@ const BarSample = ({
           content: contentExtra
             ? (item[contentExtra] * 100).toFixed(0) + '%'
             : '',
-          style: {
-            textAlign: 'center',
-          },
+          style: barTextStyle,
           offsetY: -12,
         });
     });

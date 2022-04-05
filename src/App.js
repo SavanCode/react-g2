@@ -64,6 +64,8 @@ export default function App() {
         x="type"
         y="value"
         contentExtra="percent"
+        xLabelColor="black"
+        barTextStyle={{ textAlign: 'center', fill: 'red' }}
       />
     </>
   );
